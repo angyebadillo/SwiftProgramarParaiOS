@@ -13,10 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var hamburguesaLabel: UILabel!
     
-    @IBOutlet weak var costoLabel: UILabel!
-    
     let colores = Colores()
-    let hamburguesas = Hamburguesas()
+    let paises = ColeccionDePaises()
+    let hamburguesas = ColeccionDeHamburguesas()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +28,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mostrarDatos() {
-        let (pais, hamb, cost) = hamburguesas.regresaHamburguesas()
+        let posicion = Int(arc4random())%paises.paises.count
         let color = colores.regresaColorAleatorio()
         
-        paisLabel.text = pais
-        hamburguesaLabel.text = hamb
-        costoLabel.text = cost
+        paisLabel.text = paises.obtenPais(posicion)
+        hamburguesaLabel.text = hamburguesas.obtenHamburguesa(posicion)
         
         view.backgroundColor = color
         view.tintColor = color

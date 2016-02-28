@@ -9,6 +9,75 @@
 import Foundation
 import UIKit
 
+class ColeccionDePaises {
+    let paises = [
+        "México",
+        "Canada",
+        "Chile",
+        "Argentina",
+        
+        "Alemania",
+        "Italia",
+        "Inglaterra",
+        "Suiza",
+        
+        "Egipto",
+        "Etiopia",
+        "Marruecos",
+        "Libia",
+        
+        "Turquia",
+        "Rusia",
+        "Japon",
+        "India",
+        
+        "Australia",
+        "Nueva Zelanda",
+        "Fiji",
+        "Indonesia"
+    ]
+    
+    func obtenPais(pos:Int )->String
+    {
+        return paises[pos]
+    }
+}
+
+
+class ColeccionDeHamburguesas {
+    let hamburguesas = [
+        "La Grandiosa",
+        "Montreal Burguer",
+        "Lúcuma",
+        "Sorrentina",
+        
+        "Lüneburger",
+        "Little Italy",
+        "Buxton Blue",
+        "Raclette",
+        
+        "Faraon",
+        "Niter Kebbeh",
+        "Marraquech",
+        "Hummus",
+        
+        "Yayla",
+        "Pavlova",
+        "Sashimi",
+        "Daal ki kachauri",
+        
+        "Cangu Burguer",
+        "Lamington",
+        "Viti Levu",
+        "Ayam Taliwang"
+    ]
+    
+    func obtenHamburguesa(pos:Int )->String
+    {
+        return hamburguesas[pos]
+    }
+}
+
 struct Colores{
     let colores = [
         UIColor(red:210/255, green: 128/255,  blue:0/255,   alpha:1),
@@ -29,44 +98,3 @@ struct Colores{
     
 }
 
-struct Hamburguesas{
-    let paises = [
-        "México",
-        "Alemania",
-        "Italia",
-        "Egipto",
-        "Australia",
-        "Rusia",
-        "Inglaterra",
-        "Etiopia"
-    ]
-    
-    let hamburguesas = [
-        "La Grandiosa",
-        "Lüneburger",
-        "Little Italy",
-        "Faraon",
-        "KanguBurguer",
-        "Pavlova",
-        "Buxton Blue",
-        "Niter Kebbeh"
-    ]
-    
-    let costos = [
-        "45.00",
-        "52.00",
-        "61.00",
-        "49.00",
-        "40.00",
-        "73.00",
-        "55.00",
-        "100.00"
-    ]
-    
-    func regresaHamburguesas()->(String, String, String){
-        let posicion = Int(arc4random())%paises.count
-        
-        return (paises[posicion],hamburguesas[posicion],costos[posicion])
-    }
-    
-}
